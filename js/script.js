@@ -2,17 +2,17 @@
  * 
  */
 
-var saleCount = 30;
+var saleCount = 1;
 function saleProgress(sale) {
     var fullBar = $('.bar').width();
     var bar = $('.bar-inner');
-    var saleSize = fullBar - ((fullBar / 500) * sale);
+    var saleSize = fullBar - ((fullBar / 5) * sale);
     bar.stop(true, true);
     $('.bar').addClass('shake');
-    bar.animate({width: saleSize}, 500, function(){
+    bar.animate({width: saleSize}, 5, function(){
         setTimeout(function() {
             $('.bar').removeClass('shake');
-        }, 500);
+        }, 5);
         
     });
     $('.barText').text(sale).addClass('bounceIn');
@@ -53,7 +53,7 @@ function runEffect(hideScreen, showScreen) {
         
     saleCount = +$($('.barText')[0]).text();
     if(!saleCount) {
-        saleCount = 30;
+        saleCount = 1;
     }
     $('html,body').animate({
         scrollTop: $(showScreen).offset().top}, 1000, function() {
@@ -63,19 +63,19 @@ function runEffect(hideScreen, showScreen) {
             saleProgress(saleCount);
         }
         if($('#screen4').css('display') == 'table' && $('#screen5').css('display') == 'none') {
-            if(saleCount < 500) {
-                saleCount += 30;
+            if(saleCount < 4) {
+                saleCount += 2;
             }
             else {
-                saleCount = 500;
+                saleCount = 3;
             }
         }
-        if($('#screen7').css('display') == 'table' && $('#screen9').css('display') == 'none') {
-            if(saleCount < 500) {
-                saleCount += 30;
+        if($('#screen6').css('display') == 'table' && $('#screen9').css('display') == 'none') {
+            if(saleCount < 5) {
+                saleCount += 1;
             }
             else {
-                saleCount = 500;
+                saleCount = 4;
             }
             saleProgress(saleCount);
         }
@@ -112,9 +112,9 @@ $(document).ready(function () {
 $(document).ready(function () {
     $('.slider').slider({
         range: "min",
-        min: 1,
-        max: 25,
-        value: 5,
+        min: 10,
+        max: 600,
+        value: 300,
         slide: function( event, ui ) {
             $('input[name="flatEtazh"]').val( ui.value );
         }
@@ -176,11 +176,11 @@ $(document).ready(function () {
                 allSales -= $(val).data('sale');
             }
         });
-        if(saleCount < 500) {
+        if(saleCount < 5) {
             saleProgress(saleCount + allSales);
         }
         else {
-            saleCount = 500;
+            saleCount = 5;
             saleProgress(saleCount);
         }
     });
@@ -188,11 +188,11 @@ $(document).ready(function () {
 //УТОЧНИТЕ ОСОБЕННОСТИ КВАРТИРЫ
 $(document).ready(function() {
     if($('#screen4').css('display') == 'table') {
-        if(saleCount < 500) {
-            saleCount += 30;
+        if(saleCount < 5) {
+            saleCount += 1;
         }
         else {
-            saleCount = 500;
+            saleCount = 5;
         }
     }
     $('#screen4 input').change(function() {saleProgress(saleCount);});
@@ -200,17 +200,17 @@ $(document).ready(function() {
 //ВЫБЕРИТЕ ТИП И КОЛИЧЕСТВО ОКОН
 $(document).ready(function() {
     $('.plus').click(function() {
-            if(saleCount < 500) {
-                saleCount += 30;
+            if(saleCount < 5) {
+                saleCount += 1;
             }
             else {
-                saleCount = 500;
+                saleCount = 5;
             }
             saleProgress(saleCount);    
     });
     $('.minus').click(function() {
         if($(this).closest('.num').find('input').val() > 0 ) {
-            saleCount -= 30;
+            saleCount -= 1;
             saleProgress(saleCount);
         }
         else {
@@ -242,11 +242,11 @@ $(document).ready(function () {
                 allSales -= $(val).data('sale');
             }
         });
-        if(saleCount < 500) {
+        if(saleCount < 5) {
             saleProgress(allSales + saleCount);
         }
         else {
-            saleCount = 500;
+            saleCount = 4;
             saleProgress(saleCount);
         }
     });
@@ -278,11 +278,11 @@ $(document).ready(function () {
             saleProgress(saleCount);
         }
         else if(allSales.length < 2){
-            if(saleCount < 500) {
-                saleProgress(saleCount + 30);
+            if(saleCount < 5) {
+                saleProgress(saleCount + 1);
             }
             else {
-                saleCount = 500;
+                saleCount = 5;
                 saleProgress(saleCount);
             }
         }
@@ -351,9 +351,9 @@ $(document).ready(function () {
                     setTimeout(function () {
                         var hideScreen = $('#screen9');
                         var showScreen = hideScreen.next();
-                        if(saleCount < 55) {saleCount = 55}
-                        $('input[name="sale"]').val(saleCount + ' UAH');
-                        $('#screen10 .question span').text(saleCount + ' UAH');
+                        if(saleCount < 5) {saleCount = 5}
+                        $('input[name="sale"]').val(saleCount + ' %');
+                        $('#screen10 .question span').text(saleCount + ' %');
                         runEffect(hideScreen, showScreen);
                         return false;
                     }, 1500)
