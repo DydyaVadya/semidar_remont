@@ -37,8 +37,9 @@ $phone =  trim(strip_tags($_POST['phone']));
 
 
 if((isset($phone)&&$_POST['phone']!='')){
-    $to = 'semidar_ss@ukr.net';
-    $subject = 'Подбор ПВХ окна!';
+//    $to = 'semidar_ss@ukr.net';
+//    $to = 'vider2015adw@gmail.com';
+    $subject = 'Семидар Ремонт!';
     $message = '
                 <html>
                     <head>
@@ -47,16 +48,14 @@ if((isset($phone)&&$_POST['phone']!='')){
                     <body>                      
                         <p>Имя: '.$name.'</p>
                         <p>Телефон: '.$phone.'</p>                         
-                        <p>Тип дома: '.$houseType.'</p>
-                        <p>Этаж: '.$level.'</p>
-                        <p>Тип окна:</p>
-                        <p>Одностворчатое:'.$window1.'</p>
-                        <p>Двухстворчатое:'.$window2.'</p>
-                        <p>Трехстворчатое:'.$window3.'</p>
-                        <p>Балконный блок:'.$window4.'</p>
-                        <p>Профиль: '.$typeOfProfile.'</p>
-                        <p>Доп. комплектация: '.$complectation.'</p>   
-                        <p>Рзмер скидки: '.$sale.'</p>                                                                                    
+                        <p>Особенности помещения: '.$houseType.'</p>
+                        <p>Площадь помещения: '.$level.'</p>
+                        <p>Где собираетесь делать ремонт?  '.$housePlace.'</p>
+                        <p>У вас уже есть дизайн проект? - '.$wishes.'</p>
+                        <p>Необходимость перепланировки: '.$typeOfProfile.'</p>
+                        
+                       <!-- <p>Рзмер скидки: '.$sale.'</p> -->     
+                       <p>Рзмер скидки: 5%</p>                                                                               
                     </body>
                 </html>';
     $headers  = "Content-type: text/html; charset=utf-8 \r\n";
@@ -72,5 +71,5 @@ if((isset($phone)&&$_POST['phone']!='')){
     echo json_encode($response);
 }
 
-$msg = "Подбор ПВХ окна"."%0A"."Имя: $name"."%0A"."Телефон: $phone"."%0A"."Где будем ставить окна? - $housePlace"."%0A"."Куда вы хотите установить окна? - $wishes"."%0A"."Особености квартиры: $houseType"."%0A"."Этаж: $level"."%0A"."Тип окна:"."%0A"."Одностворчатое: $window1 "."%0A"."Двухстворчатое: $window2 "."%0A"."Трехстворчатое: $window3 "."%0A"."Балконный блок: $window4 "."%0A"."Тип профиля: $typeOfProfile"."%0A"."Комплектация: $complectation"."%0A"."Размер скидки: $sale";
-file_get_contents("https://api.telegram.org/bot583559403:AAF-k-k8yCBVE6FzRPvdMulDuBZ8iVGxhiw/sendMessage?chat_id=-265843918&text=$msg");
+$msg = "Семидра Ремонт"."%0A"."Имя: $name"."%0A"."Телефон: $phone"."%0A"."Где собираетесь делать ремонт? - $housePlace"."%0A"."У вас уже есть дизайн проект? - $wishes"."%0A"."Особенности помещения: $houseType"."%0A"."Площадь помещения: $level"."%0A"."Необходимость перепланировки: $typeOfProfile"."%0A"."Размер скидки: 5%";
+file_get_contents("https://api.telegram.org/bot570437910:AAEwPpGQmtVYaeRsLwiUSVr1crfjdjQ8WY4/sendMessage?chat_id=-1001176845800&text=$msg");
