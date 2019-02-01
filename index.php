@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Ремонт под ключ</title>
     <meta name="description"
-          content="Ремонт под ключ от компании Графито">
+          content="Ремонт под ключ от компании Семидар">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="js/jquery-3.1.1.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
@@ -57,17 +57,17 @@
         </form>
         <div class="ourself">
             Или перезвоните нам сами
-            <a href="tel:+380504408475">+380 (50) 440-84-75</a>
+            <a href="tel:+380952762262">+380 (95) 276-22-62</a>
         </div>
     </div>
     <form action="mail.php" method="post" onsubmit="" id="kalkulatorForm">
         <div class="screen" id="screen1">
             <header>
                 <div class="container">
-                    <a href="tel:+380504408475‬" class="tel"><img src="img/mts.png" alt="">+380 (50) <span>440-84-75</span></a>
+                    <a href="tel:+380952762262‬" class="tel"><img src="img/mts.png" alt="">+380 (95) <span>276-22-62</span></a>
                     <img src="img/logo.png" alt="">
                     Узнайте предварительную стоимость ремонта и получите персональную скидку 5%
-                    <a href="tel:+380504408475‬" class="mobtel" style="display: none"><img src="img/mts.png" alt="">+380 (50) 440-84-75‬</a>
+                    <a href="tel:+380952762262‬" class="mobtel" style="display: none"><img src="img/mts.png" alt="">+380 (95) 276-22-62</a>
                 </div>
             </header>
             <div class="container">
@@ -81,34 +81,40 @@
                     <div class="startQuest">
                         <p>Получить промокод</p>
                     </div>
-                    <div class="carousel">
-                        <div class="owl-carousel">
-                            <div>
-                                <img src="img/slider/logos/1.jpg" alt="">
-                            </div>
-                            <div>
-                                <img src="img/slider/logos/2.jpg" alt="">
-                            </div>
-                            <div>
-                                <img src="img/slider/logos/3.jpg" alt="">
-                            </div>
-                            <div>
-                                <img src="img/slider/logos/4.jpg" alt="">
-                            </div>
-                            <div>
-                                <img src="img/slider/logos/5.jpg" alt="">
-                            </div>
-                            <div>
-                                <img src="img/slider/logos/6.jpg" alt="">
-                            </div>
-                        </div>
-                    </div>
+                    <!--<div class="carousel">-->
+                        <!--<div class="owl-carousel">-->
+                            <!--<div>-->
+                                <!--<img src="img/slider/logos/1.jpg" alt="">-->
+                            <!--</div>-->
+                            <!--<div>-->
+                                <!--<img src="img/slider/logos/2.jpg" alt="">-->
+                            <!--</div>-->
+                            <!--<div>-->
+                                <!--<img src="img/slider/logos/3.jpg" alt="">-->
+                            <!--</div>-->
+                            <!--<div>-->
+                                <!--<img src="img/slider/logos/4.jpg" alt="">-->
+                            <!--</div>-->
+                            <!--<div>-->
+                                <!--<img src="img/slider/logos/5.jpg" alt="">-->
+                            <!--</div>-->
+                            <!--<div>-->
+                                <!--<img src="img/slider/logos/6.jpg" alt="">-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
                     <div class="zayKolvo">
                         <p class="unp">Semidar Chernigov</p>
-                            <p>сегодня обработано<span>
-                            606                            </span>
+
+
+                        <p>сегодня обработано<span>
+                              <?php
+                              $time = file_get_contents('./time.txt');
+                              echo $time;
+                              ?>                 </span>
                                 заявок
                             </p>
+
                             <p class="unpmob" style="display: none">Semidar Chernigov</p>
                         </div>
                     </div>
@@ -561,7 +567,7 @@
                         Поздравляем! Вы получаете скидку <span>5 %</span> на ремонт!
                     </p>
                     <div class="quest">
-                        <label for="phone">Вы сэкономили время менеджера и заработали персональную скидку на услуги компании Графито! Для закрепления за Вами скидки, оставьте свой номер телефона.</label>
+                        <label for="phone">Вы сэкономили время менеджера и заработали персональную скидку на услуги компании Семидар! Для закрепления за Вами скидки, оставьте свой номер телефона.</label>
                         <div class="name">
                             <img src="img/man.png" alt="">
                             <input type="text" name="name" id="name" placeholder="Ваше имя">

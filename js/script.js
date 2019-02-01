@@ -629,6 +629,9 @@ function sendAjaxForm(ajax_form, url) {
         data: $("#"+ajax_form).serialize(),  // Сеарилизуем объект
         success: function(response) { //Данные отправлены успешно
             // dataLayer.push({'event': 'zayavka'});
+            //мой тест
+
+            //мой тест
             alert('Спасибо, форма отправлена!');
             $('#kalkulatorForm')[0].reset();
         },
