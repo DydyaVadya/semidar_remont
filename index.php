@@ -109,9 +109,11 @@
 
                         <p>сегодня обработано<span>
                               <?php
-                              $time = file_get_contents('./time.txt');
+                              $time = file_get_contents('../../../time.txt');
                               echo $time;
-                              ?>                 </span>
+                              ?>
+
+                            </span>
                                 заявок
                             </p>
 
