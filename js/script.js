@@ -439,7 +439,7 @@ $(document).ready(function () {
             $(this).prop( 'disabled', true ).val('Отправлено');
             $('#screen10 .phone .alert').hide();
             // yaCounter99999999.reachGoal('StoimostFinal');
-            // dataLayer.push({'event': 'zayavka'});
+            dataLayer.push({'event': 'zayavka'});
            // ga('send', 'event', 'Btn', 'Click', 'StoimostFinal');
             $('form').submit();
         }
@@ -479,17 +479,17 @@ $(document).ready(function () {
                 cache: false,
                 success: function () {
                     if(formType === "Заказ звонка") {
-                        // dataLayer.push({'event': 'zayavka'});
+                        dataLayer.push({'event': 'zayavka'});
                         // yaCounter43956349.reachGoal('ZakazZvonkaVsplivashka');
                         ga('send', 'event', 'Btn', 'Click', 'ZakazZvonkaVsplivashka');
                     }
                     if(formType === "Обьемная скидка") {
                         // yaCounter999999999.reachGoal('VolumeDiscount');
-                        // dataLayer.push({'event': 'zayavka'});
+                        dataLayer.push({'event': 'zayavka'});
                         ga('send', 'event', 'Btn', 'Click', 'VolumeDiscount');
                     }
                     if(formType === "Консультация") {
-                        // dataLayer.push({'event': 'zayavka'});
+                        dataLayer.push({'event': 'zayavka'});
                         // yaCounter999999999.reachGoal('Consultation');
                         ga('send', 'event', 'Btn', 'Click', 'Consultation');
                     }
@@ -628,7 +628,7 @@ function sendAjaxForm(ajax_form, url) {
         dataType: "html", //формат данных
         data: $("#"+ajax_form).serialize(),  // Сеарилизуем объект
         success: function(response) { //Данные отправлены успешно
-            // dataLayer.push({'event': 'zayavka'});
+            dataLayer.push({'event': 'zayavka'});
             //мой тест
 
             //мой тест
